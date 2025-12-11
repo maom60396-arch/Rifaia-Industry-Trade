@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مؤسسة الرفاعي للصناعة والتجارة | حلول صناعية متكاملة</title>
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        /* --- لوحة الألوان والهوية البصرية --- */
+        :root {
+            --primary-color: #5D4037;
+            --secondary-color: #8D6E63;
+            --accent-color: #C0AF50;
+            --accent-hover: #B3922D;
+            --light-bg: #FAF8F5;
+            --dark-text: #2D1B18;
+        }
+
+        html { scroll-behavior: smooth; }
+        
+        body {
+            font-family: 'Tajawal', 'Segoe UI', Tahoma, sans-serif;
+            color: var(--dark-text);
+            background-color: var(--light-bg);
+            background-image: radial-gradient(#5d4037 0.5px, transparent 0.5px), radial-gradient(#5d4037 0.5px, var(--light-bg) 0.5px);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            background-blend-mode: multiply;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ========================================= */
+        /* --- شاشة التحميل المتموجة (Preloader) --- */
+        /* ========================================= */
+        #preloader {
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-color: var(--primary-color);
+            z-index: 99999;
+            display: flex; justify-content: center; align-items: center;
+            transition: opacity 0.8s ease, visibility 0.8s ease;
+        }
+
+        .loader-content { position: relative; width: 150px; height: 150px; display: flex; justify-content: center; align-items: center; }
+        
+        .loader-logo { 
+            width: 90px; height: 90px; z-index: 2; border-radius: 50%; 
+            box-shadow: 0 0 20px rgba(0,0,0,0.3);
+            object-fit: cover;
+            animation: breathe 2s infinite ease-in-out;
+        }
+
+        .wave {
+            position: absolute; top: 50%; left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100%; height: 100%;
+            border-radius: 50%;
+            border: 2px solid var(--accent-color);
+            opacity: 0;
+            animation: wave-animation 3s infinite linear;
+        }
+        .wave:nth-child(2) { animation-delay: 1s; }
+        .wave:nth-child(3) { animation-delay: 2s; }
+
+        @keyframes wave-animation {
+            0% { width: 0; height: 0; opacity: 1; border-width: 5px; }
+            100% { width: 250%; height: 250%; opacity: 0; border-width: 0px; }
+        }
+        @keyframes breathe { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
+
+        .loaded #preloader { opacity: 0; visibility: hidden; }
+        .loaded { overflow-y: auto; }
+
+        /* --- باقي التنسيقات --- */
+        ::-webkit-scrollbar { width: 10px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: var(--secondary-color); border-radius: 5px; border: 2px solid #f1f1f1; }
+        ::-webkit-scrollbar-thumb:hover { background: var(--primary-color); }
+
+        .btn { transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); font-weight: 700; letter-spacing: 0.5px; }
+        .btn-gold { background: linear-gradient(135deg, var(--accent-color), var(--accent-hover)); color: #fff; border: none; box-shadow: 0 4px 15px rgba(192, 175, 80, 0.4); }
+        .btn-gold:hover { transform: translateY(-3px); box-shadow: 0 8px 25px rgba(192, 175, 80, 0.6); color: #fff; }
+
+        .navbar { background-color: rgba(255, 255, 255, 0.90) !important; backdrop-filter: blur(12px); box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05); border-bottom: 1px solid rgba(255, 255, 255, 0.3); }
+        .navbar-brand img { max-height: 60px; margin-left: 10px; border-radius: 50%; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .nav-link { color: var(--dark-text); font-weight: 600; margin: 0 10px; position: relative; transition: color 0.3s; }
+        .nav-link:hover, .nav-link.active { color: var(--accent-color); }
+
+        .hero-section { background: linear-gradient(180deg, rgba(20, 30, 48, 0.85) 0%, rgba(93, 64, 55, 0.8) 100%), url('https://scontent.fist14-1.fna.fbcdn.net/v/t39.30808-6/421890230_1428294631373177_1194097068270619172_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=Oz1TCQ-BxmwQ7kNvwH_0pIJ&_nc_oc=AdnYzJB4XixE0DJdw1AwkjN4CIhN-jdgYHXi5uRrOHXgGl3ekIF0h1E86e7KwZRjCMk&_nc_zt=23&_nc_ht=scontent.fist14-1.fna&_nc_gid=Ovk8a-mRkwG1TX7d3gXAHQ&oh=00_AfmT3667XMj3qxvu53TfmwOPPQfDztL9pdZRqDW9-gar2w&oe=693FB81F'); background-size: cover; background-position: center; background-attachment: fixed; color: white; padding: 180px 0 150px; text-align: center; clip-path: polygon(0 0, 100% 0, 100% 90%, 50% 100%, 0 90%); }
+        .hero-title { font-size: 3.8rem; font-weight: 800; margin-bottom: 25px; color: var(--accent-color); text-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .section-title { color: var(--primary-color); text-align: center; margin-bottom: 60px; font-weight: 800; position: relative; display: inline-block; letter-spacing: -1px; }
+        .section-title::after { content: ''; width: 60px; height: 5px; background: var(--accent-color); position: absolute; bottom: -15px; left: 50%; transform: translateX(-50%); border-radius: 10px; }
+
+        .video-wrapper-fancy { border-radius: 22px; background: linear-gradient(135deg, var(--accent-color), var(--primary-color), var(--secondary-color)); padding: 6px; box-shadow: 0 30px 60px -15px rgba(93, 64, 55, 0.5); animation: gradientShift 8s ease infinite; }
+        .video-wrapper-mini { border-radius: 12px; background: linear-gradient(135deg, var(--accent-color), var(--secondary-color)); padding: 3px; margin-bottom: 20px; box-shadow: 0 10px 25px -5px rgba(0,0,0,0.15); overflow: hidden; }
+        .video-inner-frame, .ratio iframe, .ratio video { border-radius: 9px; }
+        @keyframes gradientShift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+
+        .product-card { border: none; box-shadow: 0 10px 30px -10px rgba(93, 64, 55, 0.1); transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); background: #fff; border-radius: 16px; overflow: hidden; height: 100%; border: 1px solid rgba(0,0,0,0.03); }
+        .product-card:hover { transform: translateY(-15px); box-shadow: 0 20px 40px -10px rgba(93, 64, 55, 0.2); }
+        .product-card img { height: 260px; object-fit: cover; transition: transform 0.8s ease; width: 100%; }
+        .product-card:hover img { transform: scale(1.1); }
+        .product-title { color: var(--primary-color); font-weight: 800; font-size: 1.4rem; margin-bottom: 15px; }
+
+        .contact-icons-row { display: flex; justify-content: center; gap: 15px; margin-top: 20px; padding-top: 15px; border-top: 1px dashed #eee; }
+        .icon-btn { width: 45px; height: 45px; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 1.4rem; transition: all 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.1); text-decoration: none; }
+        .icon-btn.messenger { background: linear-gradient(45deg, #00B2FF, #006AFF); animation: pulse-blue 2s infinite; }
+        .icon-btn.whatsapp { background: linear-gradient(45deg, #25D366, #128C7E); animation: pulse-green 2s infinite; animation-delay: 1s; }
+        .icon-btn:hover { transform: translateY(-5px) scale(1.15); }
+
+        .feature-box { text-align: center; padding: 45px 25px; background: #fff; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); transition: all 0.4s; position: relative; z-index: 1; border: 1px solid #f0f0f0; }
+        .feature-box:hover { transform: translateY(-10px); border-bottom: 4px solid var(--accent-color); }
+        /* تم استبدال الأيقونة بالفيديو، لذا تم حذف تنسيق الأيقونة من هنا */
+
+        .smart-contact-container { position: relative; display: inline-block; margin-top: 20px; }
+        .main-action-btn { width: 80px; height: 80px; border-radius: 50%; background: linear-gradient(135deg, var(--accent-color), var(--accent-hover)); color: #fff; border: none; font-size: 32px; box-shadow: 0 0 0 0 rgba(192, 175, 80, 0.7); animation: pulse-gold 2s infinite; display: flex; align-items: center; justify-content: center; cursor: pointer; position: relative; z-index: 10; transition: transform 0.3s ease; }
+        .main-action-btn:hover { transform: scale(1.1); }
+        .main-action-btn.active { transform: rotate(45deg); background: #3E2723; animation: none; box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+        .social-popup-menu { position: absolute; bottom: 10px; left: 50%; transform: translateX(-50%); width: 60px; transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55); z-index: 5; opacity: 0; pointer-events: none; }
+        .smart-contact-container.open .social-popup-menu { opacity: 1; pointer-events: auto; }
+        .smart-contact-container.open .social-item:nth-child(1) { transform: translateY(-90px); }
+        .smart-contact-container.open .social-item:nth-child(2) { transform: translateY(-150px); }
+        .smart-contact-container.open .social-item:nth-child(3) { transform: translateY(-210px); }
+        .smart-contact-container.open .social-item:nth-child(4) { transform: translateY(-270px); }
+        .social-item { display: flex; align-items: center; justify-content: center; width: 55px; height: 55px; border-radius: 50%; color: #fff; text-decoration: none; position: absolute; bottom: 0; left: 2px; box-shadow: 0 5px 15px rgba(0,0,0,0.2); transition: all 0.4s; font-size: 24px; }
+        .social-item:hover { transform: scale(1.2) !important; z-index: 20; }
+        .si-fb { background: #1877F2; } .si-messenger { background: linear-gradient(45deg, #00B2FF, #006AFF); } .si-whatsapp { background: #25D366; } .si-insta { background: linear-gradient(45deg, #f09433 0%,#e6683c 25%,#dc2743 50%,#cc2366 75%,#bc1888 100%); }
+
+        @keyframes pulse-blue { 0% { box-shadow: 0 0 0 0 rgba(0, 106, 255, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(0, 106, 255, 0); } 100% { box-shadow: 0 0 0 0 rgba(0, 106, 255, 0); } }
+        @keyframes pulse-green { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 10px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+        @keyframes pulse-gold { 0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(192, 175, 80, 0.7); } 70% { transform: scale(1); box-shadow: 0 0 0 20px rgba(192, 175, 80, 0); } 100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(192, 175, 80, 0); } }
+
+        .footer { background: linear-gradient(to bottom, var(--primary-color), #2D1B18); color: #E0D0B8; padding: 80px 0 30px; }
+        .footer h5 { color: var(--accent-color); font-weight: 700; margin-bottom: 30px; border-right: 3px solid var(--accent-color); padding-right: 15px; }
+        .footer a:hover { color: var(--accent-color) !important; padding-right: 5px; }
+        .social-links a { font-size: 1.5rem; margin: 0 10px; color: #fff; transition: 0.3s; display: inline-block; }
+        .social-links a:hover { color: var(--accent-color); transform: scale(1.2) rotate(10deg); }
+
+        .whatsapp-float { position: fixed; width: 60px; height: 60px; bottom: 30px; left: 30px; background: linear-gradient(45deg, #25D366, #128C7E); color: #FFF; border-radius: 50%; text-align: center; font-size: 32px; box-shadow: 0 5px 20px rgba(37, 211, 102, 0.4); z-index: 1000; display: flex; align-items: center; justify-content: center; transition: all 0.4s; }
+        .whatsapp-float:hover { transform: scale(1.1) rotate(10deg); color: #FFF; box-shadow: 0 10px 25px rgba(37, 211, 102, 0.6); }
+    </style>
+</head>
+<body>
+
+    <div id="preloader">
+        <div class="loader-content">
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <div class="wave"></div>
+            <img src="https://scontent.fist14-1.fna.fbcdn.net/v/t39.30808-6/308647124_603850521439802_1770100278360064119_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=E8QlippjJnoQ7kNvwHqBmON&_nc_oc=AdkmvJCiASl9fQy4ihFGLuInOxB3EtBcOV0BP4vGaNQv7K8DwKHkIQRWfsXU-MHDSrs&_nc_zt=23&_nc_ht=scontent.fist14-1.fna&_nc_gid=Zk2SHwaY8n-s5Ovnbs2LYg&oh=00_Afms40hktD18mt5r_6wn-JuUK4r3iXoeCAGyz6qaRcZU-g&oe=693FC85A" alt="Logo" class="loader-logo">
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand-lg sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="#">
+                <img src="https://scontent.fist14-1.fna.fbcdn.net/v/t39.30808-6/308647124_603850521439802_1770100278360064119_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=E8QlippjJnoQ7kNvwHqBmON&_nc_oc=AdkmvJCiASl9fQy4ihFGLuInOxB3EtBcOV0BP4vGaNQv7K8DwKHkIQRWfsXU-MHDSrs&_nc_zt=23&_nc_ht=scontent.fist14-1.fna&_nc_gid=Zk2SHwaY8n-s5Ovnbs2LYg&oh=00_Afms40hktD18mt5r_6wn-JuUK4r3iXoeCAGyz6qaRcZU-g&oe=693FC85A" alt="شعار مؤسسة الرفاعي">
+                <span class="ms-2 fw-bold text-dark">مؤسسة الرفاعي <span style="color: var(--accent-color)">للصناعة والتجارة</span></span>
+            </a>
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link active" href="#hero">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#features">خدماتنا</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#video-showcase">الفيديو</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products">المنتجات</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">اتصل بنا</a></li>
+                </ul>
+                <div class="d-flex ms-lg-3">
+                    <a href="#contact" class="btn btn-gold rounded-pill px-4 py-2">تواصل معنا</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero-section" id="hero">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-10" data-aos="zoom-out-up" data-aos-duration="1200">
+                    <h1 class="hero-title">الريادة في صناعة خطوط الإنتاج</h1>
+                    <p class="hero-lead fs-4 opacity-75">نقدم أحدث الحلول التكنولوجية في مجال خطوط إنتاج الأعلاف، المطاحن، والمعدات الهندسية بأعلى المعايير العالمية.</p>
+                    <div data-aos="fade-up" data-aos-delay="300" class="mt-4">
+                        <a href="#products" class="btn btn-gold btn-lg rounded-pill px-5 py-3 me-3 mb-3 shadow">استعرض منتجاتنا</a>
+                        <a href="#contact" class="btn btn-outline-light btn-lg rounded-pill px-5 py-3 mb-3">طلب استشارة</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section class="py-5" id="features">
+        <div class="container py-5">
+            <div class="section-title-wrapper" data-aos="fade-up">
+                <h2 class="section-title">مجالات التميز وشراكاتنا العالمية</h2>
+            </div>
+            
+            <div class="row g-4 mt-4 align-items-stretch">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-box h-100">
+                        <div class="video-wrapper-mini">
+                            <div class="video-inner-frame">
+                                <div class="ratio ratio-16x9">
+                                    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmhmwd.alrfa.y.911353%2Fposts%2Fpfbid02JjZjB3pL2hDpBLAKkAB1rEir6qEbrccH1AuLSZG1xmSbQgW6Wbz69u9mE7d6YWZcl&show_text=false&width=500" width="auto" height="auto" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <h4>صناعات هندسية متقدمة</h4>
+                        <p class="text-muted">تصنيع الصاج المثقب (شقي - مدور) وشبك الكروم، بالإضافة إلى خطوط انتاج البلاستيك والشيبس.</p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-box h-100">
+                         <div class="video-wrapper-mini">
+                            <div class="video-inner-frame">
+                                <div class="ratio ratio-16x9">
+                                    <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2Frefae3005%2Fvideos%2F1219099244920189%2F&show_text=false&t=0" width="auto" height="auto" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <h4>دقة في التصنيع</h4>
+                        <p class="text-muted">نستخدم أحدث التقنيات لضمان الجودة العالية في جميع مراحل الإنتاج والتصنيع.</p>
+                    </div>
+                </div>
+
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-box h-100">
+                        <div class="video-wrapper-mini">
+                            <div class="video-inner-frame">
+                                <div class="ratio ratio-16x9">
+                                    <iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fmhmwd.alrfa.y.911353%2Fposts%2Fpfbid034UJCxcoNCeDJePraQ9wCw6Uph3yvhCJKJEty1UfREu1QbZLLEeTtAfHfb6o164s9l&show_text=false&width=500" width="auto" height="auto" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                                </div>
+                            </div>
+                        </div>
+                        <h4>حلول زراعية وغذائية</h4>
+                        <p class="text-muted">خطوط متكاملة لصناعة الأعلاف المضغوطة، مطاحن الدقيق، مجارش العدس، ومعامل تكرير الزيوت.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" id="video-showcase" style="background-color: #fff;">
+        <div class="container py-4">
+            <div class="section-title-wrapper mb-5" data-aos="fade-up">
+                <h2 class="section-title">جولة في مصانعنا ومشاريعنا</h2>
+                <p class="text-muted mt-3" style="max-width: 700px; margin: 0 auto;">شاهد أحدث التقنيات التي نقدمها لعملائنا في مجال معالجة الحبوب والصناعات الغذائية.</p>
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-10" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="video-wrapper-fancy">
+                        <div class="video-inner-frame">
+                            <div class="ratio ratio-16x9">
+                                <iframe src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fmhmwd.alrfa.y.911353%2Fposts%2Fpfbid034UJCxcoNCeDJePraQ9wCw6Uph3yvhCJKJEty1UfREu1QbZLLEeTtAfHfb6o164s9l&show_text=false&t=0" width="auto" height="auto" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"></iframe>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" id="products" style="position: relative;">
+        <div style="position: absolute; top: 50px; left: -50px; opacity: 0.03; color: var(--primary-color); font-size: 20rem; z-index: -1;"><i class="fas fa-cogs"></i></div>
+        <div class="container py-5" style="position: relative; z-index: 1;">
+            <div class="section-title-wrapper" data-aos="fade-up">
+                <h2 class="section-title">أبرز خطوط الإنتاج والمعدات</h2>
+                <p class="text-muted mt-3" style="max-width: 600px; margin: 0 auto;">تجهيزات غذائية وهندسية متكاملة (استيراد - تصدير)</p>
+            </div>
+            
+            <div class="row g-4 mt-5">
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="card product-card">
+                        <div class="img-wrapper">
+                            <img src="https://scontent.fist14-1.fna.fbcdn.net/v/t39.30808-6/480499722_1145481980609984_7763837763332539920_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=woO4haog2mcQ7kNvwFhTPKt&_nc_oc=AdkNyDFBhoqlqbkxicoU6zREHjr4sRHyuzw3lFl048w0h_Es27Z0B5xcI8C_MUTQxUs&_nc_zt=23&_nc_ht=scontent.fist14-1.fna&_nc_gid=wEAaaqyGjzOiW-jIsYDUKg&oh=00_AflsU6KCVVeJ-tTHsYvLBPuP5PGGWiTs_aJFjRaO8xJYNA&oe=693FB918" class="card-img-top" alt="وحدة معالجة">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="product-title card-title">وحدات المعالجة الحديثة</h5>
+                            <p class="card-text text-muted flex-grow-1 small">تجهيزات هندسية متطورة لتنظيف ومعالجة الحبوب بأعلى كفاءة وإنتاجية.</p>
+                            <button type="button" class="btn btn-outline-dark rounded-pill btn-sm mt-2 fw-bold" data-bs-toggle="modal" data-bs-target="#modalProduct1">المواصفات الفنية</button>
+                            <div class="contact-icons-row">
+                                <a href="https://m.me/refae3005" target="_blank" class="icon-btn messenger" title="راسلنا عبر ماسنجر"><i class="fab fa-facebook-messenger"></i></a>
+                                <a href="https://wa.me/963944240327?text=مرحبا، استفسار بخصوص وحدات المعالجة" target="_blank" class="icon-btn whatsapp" title="راسلنا عبر واتساب"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="250">
+                    <div class="card product-card">
+                        <div class="img-wrapper">
+                             <img src="https://scontent.fist14-1.fna.fbcdn.net/v/t1.6435-9/89822951_595011891096020_4840195445558870016_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=5JFyNE1tSAgQ7kNvwG0X_Sh&_nc_oc=AdlW5PI_3fIMRxR3Lh7QFKVvLguAkXVvi5pOVSozuiTCGYKEiUHb9zJlwTyttHuCOCY&_nc_zt=23&_nc_ht=scontent.fist14-1.fna&_nc_gid=rqpzhOB99UgBKe4tapuMyg&oh=00_AfmpofIBE9-QQvcFXL_4c5KA1DtbKPHLO-3GZ1pqHhxRCA&oe=69616E8E" class="card-img-top" alt="خط إنتاج أعلاف">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="product-title card-title">خطوط إنتاج الأعلاف</h5>
+                            <p class="card-text text-muted flex-grow-1 small">خطوط متكاملة (دواجن، أسماك، مواشي) تشمل الاستقبال، الجرش، والكبس.</p>
+                            <button type="button" class="btn btn-outline-dark rounded-pill btn-sm mt-2 fw-bold" data-bs-toggle="modal" data-bs-target="#modalProduct2">عرض مكونات الخط</button>
+                            <div class="contact-icons-row">
+                                <a href="https://m.me/refae3005" target="_blank" class="icon-btn messenger" title="راسلنا عبر ماسنجر"><i class="fab fa-facebook-messenger"></i></a>
+                                <a href="https://wa.me/963944240327?text=مرحبا، استفسار بخصوص خطوط الأعلاف" target="_blank" class="icon-btn whatsapp" title="راسلنا عبر واتساب"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="card product-card">
+                          <div class="img-wrapper">
+                            <img src="https://scontent.fist14-1.fna.fbcdn.net/v/t39.30808-6/481945201_1690639361533262_4732355691628641363_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Du63uX1KtI4Q7kNvwFTMTRc&_nc_oc=Adl3ZU7LHzW73Sl5oxnaJ7qLz1kRxaFrCwUsP7uRNTUbufSU7So3GekqYfVCXGJq3UY&_nc_zt=23&_nc_ht=scontent.fist14-1.fna&_nc_gid=Ldf45vUsmlJuSvI1YXWNqA&oh=00_AfnrJ_d3KR69Cn0MPNDrMjmrQvoKo8c8ZDJsC6iwcU0Z2A&oe=693FCE4B" class="card-img-top" alt="حلول صناعية">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="product-title card-title">حلول صناعية متكاملة</h5>
+                            <p class="card-text text-muted flex-grow-1 small">من خطوط الشيبس والمكسرات إلى معامل تكرير الزيوت ومطاحن الدقيق.</p>
+                            <button type="button" class="btn btn-outline-dark rounded-pill btn-sm mt-2 fw-bold" data-bs-toggle="modal" data-bs-target="#modalProduct3">استعرض المشاريع</button>
+                            <div class="contact-icons-row">
+                                <a href="https://m.me/refae3005" target="_blank" class="icon-btn messenger" title="راسلنا عبر ماسنجر"><i class="fab fa-facebook-messenger"></i></a>
+                                <a href="https://wa.me/963944240327?text=مرحبا، استفسار بخصوص الحلول الصناعية" target="_blank" class="icon-btn whatsapp" title="راسلنا عبر واتساب"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="550">
+                    <div class="card product-card">
+                        <div class="img-wrapper">
+                            <img src="https://scontent.fist14-1.fna.fbcdn.net/v/t39.30808-6/421890230_1428294631373177_1194097068270619172_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=Oz1TCQ-BxmwQ7kNvwH_0pIJ&_nc_oc=AdnYzJB4XixE0DJdw1AwkjN4CIhN-jdgYHXi5uRrOHXgGl3ekIF0h1E86e7KwZRjCMk&_nc_zt=23&_nc_ht=scontent.fist14-1.fna&_nc_gid=Ovk8a-mRkwG1TX7d3gXAHQ&oh=00_AfmT3667XMj3qxvu53TfmwOPPQfDztL9pdZRqDW9-gar2w&oe=693FB81F" class="card-img-top" alt="تقنيات الفرز">
+                        </div>
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="product-title card-title">تقنيات الفرز والتنقية</h5>
+                            <p class="card-text text-muted flex-grow-1 small">أحدث ما توصلت إليه تكنولوجيا الغربلة والفرز اللوني لضمان نقاء المنتج.</p>
+                            <button type="button" class="btn btn-outline-dark rounded-pill btn-sm mt-2 fw-bold" data-bs-toggle="modal" data-bs-target="#modalProduct4">تقنية السورتكس</button>
+                            <div class="contact-icons-row">
+                                <a href="https://m.me/refae3005" target="_blank" class="icon-btn messenger" title="راسلنا عبر ماسنجر"><i class="fab fa-facebook-messenger"></i></a>
+                                <a href="https://wa.me/963944240327?text=مرحبا، استفسار بخصوص تقنيات السورتكس" target="_blank" class="icon-btn whatsapp" title="راسلنا عبر واتساب"><i class="fab fa-whatsapp"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 text-white text-center" style="background: linear-gradient(135deg, var(--secondary-color), var(--primary-color));" data-aos="fade-in">
+        <div class="container py-5">
+             <h3 class="mb-4 fw-bold" data-aos="zoom-in">هل تخطط لإنشاء مصنع جديد؟</h3>
+             <p class="lead mb-4 opacity-75" data-aos="fade-up" data-aos-delay="200">مؤسسة الرفاعي تقدم لك دراسة جدوى وتصميم الحل الأمثل لمنشأتك بأيدي خبراء.</p>
+             
+             <div class="smart-contact-container" id="contactHub">
+                <div class="social-popup-menu">
+                    <a href="https://wa.me/963944240327" target="_blank" class="social-item si-whatsapp" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://m.me/refae3005" target="_blank" class="social-item si-messenger" title="Messenger"><i class="fab fa-facebook-messenger"></i></a>
+                    <a href="https://www.facebook.com/refae3005" target="_blank" class="social-item si-fb" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://instagram.com" target="_blank" class="social-item si-insta" title="Instagram"><i class="fab fa-instagram"></i></a>
+                </div>
+                <button class="main-action-btn" onclick="toggleContactMenu()">
+                    <i class="fas fa-headset"></i>
+                </button>
+                <p class="mt-3 text-white fw-bold">اضغط هنا للتواصل المباشر</p>
+             </div>
+
+        </div>
+    </section>
+
+    <footer class="footer" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-5" data-aos="fade-up">
+                    <h5 class="d-flex align-items-center"><img src="https://scontent.fist14-1.fna.fbcdn.net/v/t39.30808-6/308647124_603850521439802_1770100278360064119_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=E8QlippjJnoQ7kNvwHqBmON&_nc_oc=AdkmvJCiASl9fQy4ihFGLuInOxB3EtBcOV0BP4vGaNQv7K8DwKHkIQRWfsXU-MHDSrs&_nc_zt=23&_nc_ht=scontent.fist14-1.fna&_nc_gid=Zk2SHwaY8n-s5Ovnbs2LYg&oh=00_Afms40hktD18mt5r_6wn-JuUK4r3iXoeCAGyz6qaRcZU-g&oe=693FC85A" style="height:40px; margin-left:10px; border-radius:50%;"> مؤسسة الرفاعي</h5>
+                    <p class="opacity-75 lh-lg">المراكز الرئيسية: سوريا - حلب. الفروع: اللاذقية - الصين (كوانزو - شنغهاي). نلتزم بالجودة والابتكار لخدمة القطاع الصناعي.</p>
+                    <div class="social-links mt-4">
+                        <h6 class="text-accent mb-3">تابعنا:</h6>
+                        <a href="https://www.facebook.com/refae3005" target="_blank" class="social-links"><i class="fab fa-facebook-f"></i></a>
+                        <a href="https://wa.me/963944240327" target="_blank" class="social-links"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 offset-lg-1 mb-5" data-aos="fade-up" data-aos-delay="100">
+                    <h5>روابط سريعة</h5>
+                    <ul class="list-unstyled lh-lg">
+                        <li><a class="text-decoration-none text-reset transition-all" href="#hero">الرئيسية</a></li>
+                        <li><a class="text-decoration-none text-reset transition-all" href="#features">خدماتنا</a></li>
+                        <li><a class="text-decoration-none text-reset transition-all" href="#video-showcase">الفيديو</a></li>
+                        <li><a class="text-decoration-none text-reset transition-all" href="#products">المنتجات</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 mb-5" data-aos="fade-up" data-aos-delay="200">
+                    <h5>خدماتنا</h5>
+                    <ul class="list-unstyled lh-lg">
+                        <li><a class="text-decoration-none text-reset transition-all" href="#">خطوط أعلاف</a></li>
+                        <li><a class="text-decoration-none text-reset transition-all" href="#">مطاحن ومجارش</a></li>
+                        <li><a class="text-decoration-none text-reset transition-all" href="#">آلات سورتكس</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 mb-5" data-aos="fade-up" data-aos-delay="300">
+                    <h5>معلومات التواصل</h5>
+                    <ul class="list-unstyled lh-lg opacity-75">
+                        <li class="mb-3"><i class="fas fa-map-marker-alt me-2 text-accent"></i> حلب - المنطقة الصناعية (الشيخ نجار)</li>
+                        <li class="mb-3"><i class="fas fa-phone-alt me-2 text-accent"></i> 0944240327 / 2222570</li>
+                        <li class="mb-3"><i class="fas fa-mobile-alt me-2 text-accent"></i> 0944600309</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright pt-4 mt-4 border-top border-white border-opacity-10 text-center opacity-50 small">
+                <p class="mb-0">جميع الحقوق محفوظة © 2025 لمؤسسة الرفاعي للصناعة والتجارة.</p>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/963944240327" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+
+    <div class="modal fade" id="modalProduct1" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header text-white" style="background-color: var(--primary-color);">
+                    <h5 class="modal-title">تفاصيل وحدات المعالجة الحديثة</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5 mb-3"><img src="https://scontent.fist14-1.fna.fbcdn.net/v/t39.30808-6/480499722_1145481980609984_7763837763332539920_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=woO4haog2mcQ7kNvwFhTPKt&_nc_oc=AdkNyDFBhoqlqbkxicoU6zREHjr4sRHyuzw3lFl048w0h_Es27Z0B5xcI8C_MUTQxUs&_nc_zt=23&_nc_ht=scontent.fist14-1.fna&_nc_gid=wEAaaqyGjzOiW-jIsYDUKg&oh=00_AflsU6KCVVeJ-tTHsYvLBPuP5PGGWiTs_aJFjRaO8xJYNA&oe=693FB918" class="img-fluid rounded" alt="وحدة معالجة"></div>
+                        <div class="col-md-7">
+                            <h4 class="text-accent mb-3">نظام تنظيف وغربلة متكامل</h4>
+                            <p>نقدم وحدات معالجة متطورة مصممة خصيصاً لتنظيف الحبوب والمحاصيل الزراعية من الشوائب والأتربة بأعلى كفاءة.</p>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check-circle text-success me-2"></i> غربال اهتزازي متعدد الطبقات.</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i> نظام شفط غبار متطور (Cyclones).</li>
+                                <li><i class="fas fa-check-circle text-success me-2"></i> طاقة إنتاجية تبدأ من 5 طن/ساعة.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">إغلاق</button>
+                    <a href="https://wa.me/963944240327?text=مرحبا، استفسار عن وحدات المعالجة" target="_blank" class="btn btn-gold rounded-pill"><i class="fab fa-whatsapp me-2"></i> تواصل مع محمد الرفاعي</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalProduct2" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header text-white" style="background-color: var(--primary-color);">
+                    <h5 class="modal-title">خطوط إنتاج الأعلاف المتكاملة</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5 mb-3"><img src="https://scontent.fist14-1.fna.fbcdn.net/v/t1.6435-9/89822951_595011891096020_4840195445558870016_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_ohc=5JFyNE1tSAgQ7kNvwG0X_Sh&_nc_oc=AdlW5PI_3fIMRxR3Lh7QFKVvLguAkXVvi5pOVSozuiTCGYKEiUHb9zJlwTyttHuCOCY&_nc_zt=23&_nc_ht=scontent.fist14-1.fna&_nc_gid=rqpzhOB99UgBKe4tapuMyg&oh=00_AfmpofIBE9-QQvcFXL_4c5KA1DtbKPHLO-3GZ1pqHhxRCA&oe=69616E8E" class="img-fluid rounded" alt="خط أعلاف"></div>
+                        <div class="col-md-7">
+                            <h4 class="text-accent mb-3">من الخام إلى المنتج النهائي</h4>
+                            <p>خطوط إنتاج آلية بالكامل (فل أوتوماتيك) أو نصف آلية حسب الطلب، مناسبة لأعلاف الدواجن، الأسماك، والمواشي.</p>
+                            <h6 class="fw-bold mt-3">مراحل الخط:</h6>
+                            <ul class="list-unstyled small">
+                                <li>1. <span class="fw-bold">وحدة الاستقبال والجرش:</span> مجارش مطرقية عالية السرعة.</li>
+                                <li>2. <span class="fw-bold">وحدة الخلط:</span> خلاطات ريبون أو مجداف لضمان تجانس 98%.</li>
+                                <li>3. <span class="fw-bold">وحدة الكبس (Pelleting):</span> مكابس بأحجام مختلفة.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">إغلاق</button>
+                    <a href="https://wa.me/963944240327?text=مرحبا، استفسار عن خطوط الأعلاف" target="_blank" class="btn btn-gold rounded-pill"><i class="fab fa-whatsapp me-2"></i> اطلب عرض سعر الآن</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalProduct3" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header text-white" style="background-color: var(--primary-color);">
+                    <h5 class="modal-title">حلول صناعية (تسليم مفتاح)</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5 mb-3"><img src="https://scontent.fist14-1.fna.fbcdn.net/v/t39.30808-6/481945201_1690639361533262_4732355691628641363_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=127cfc&_nc_ohc=Du63uX1KtI4Q7kNvwFTMTRc&_nc_oc=Adl3ZU7LHzW73Sl5oxnaJ7qLz1kRxaFrCwUsP7uRNTUbufSU7So3GekqYfVCXGJq3UY&_nc_zt=23&_nc_ht=scontent.fist14-1.fna&_nc_gid=Ldf45vUsmlJuSvI1YXWNqA&oh=00_AfnrJ_d3KR69Cn0MPNDrMjmrQvoKo8c8ZDJsC6iwcU0Z2A&oe=693FCE4B" class="img-fluid rounded" alt="حلول صناعية"></div>
+                        <div class="col-md-7">
+                            <h4 class="text-accent mb-3">مشاريع هندسية متكاملة</h4>
+                            <p>مؤسسة الرفاعي توفر لك أكثر من مجرد آلة، نحن نوفر مشروعاً متكاملاً:</p>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item"><i class="fas fa-industry text-secondary me-2"></i> <strong>مطاحن الدقيق:</strong> بقدرات إنتاجية مختلفة.</li>
+                                <li class="list-group-item"><i class="fas fa-oil-can text-secondary me-2"></i> <strong>معامل تكرير الزيوت:</strong> تكنولوجيا حديثة.</li>
+                                <li class="list-group-item"><i class="fas fa-cookie-bite text-secondary me-2"></i> <strong>خطوط الشيبس والسناكس:</strong> خطوط قلي وتتبيل.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">إغلاق</button>
+                    <a href="https://wa.me/963944240327?text=مرحبا، أود الاستفسار عن المشاريع الصناعية المتكاملة." target="_blank" class="btn btn-gold rounded-pill"><i class="fab fa-whatsapp me-2"></i> استشارة مجانية</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalProduct4" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content border-0 shadow-lg">
+                <div class="modal-header text-white" style="background-color: var(--primary-color);">
+                    <h5 class="modal-title">تقنيات الفرز اللوني (Sortex)</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-md-5 mb-3"><img src="https://scontent.fist14-1.fna.fbcdn.net/v/t39.30808-6/421890230_1428294631373177_1194097068270619172_n.jpg?stp=dst-jpg_p526x296_tt6&_nc_cat=110&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=Oz1TCQ-BxmwQ7kNvwH_0pIJ&_nc_oc=AdnYzJB4XixE0DJdw1AwkjN4CIhN-jdgYHXi5uRrOHXgGl3ekIF0h1E86e7KwZRjCMk&_nc_zt=23&_nc_ht=scontent.fist14-1.fna&_nc_gid=Ovk8a-mRkwG1TX7d3gXAHQ&oh=00_AfmT3667XMj3qxvu53TfmwOPPQfDztL9pdZRqDW9-gar2w&oe=693FB81F" class="img-fluid rounded" alt="فرز لوني"></div>
+                        <div class="col-md-7">
+                            <h4 class="text-accent mb-3">نقاء يصل إلى 99.9%</h4>
+                            <p>أحدث ما توصلت إليه التكنولوجيا في فرز الحبوب اعتماداً على اللون والشكل.</p>
+                            <p class="small text-muted">نضمن لك منتجاً نهائياً مطابقاً لمعايير التصدير العالمية.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer justify-content-between">
+                    <button type="button" class="btn btn-secondary rounded-pill" data-bs-dismiss="modal">إغلاق</button>
+                    <a href="https://wa.me/963944240327?text=مرحبا، مهتم بمعرفة تفاصيل آلات الفرز اللوني." target="_blank" class="btn btn-gold rounded-pill"><i class="fab fa-whatsapp me-2"></i> تواصل بشأن السورتكس</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // إعدادات مكتبة الحركة
+        AOS.init({ duration: 800, easing: 'cubic-bezier(0.25, 0.8, 0.25, 1)', once: true, mirror: false, offset: 120 });
+
+        // إخفاء شاشة التحميل
+        window.addEventListener('load', function() {
+            setTimeout(function() {
+                document.body.classList.add('loaded');
+            }, 2000);
+        });
+
+        // وظيفة الزر الذكي للتواصل
+        function toggleContactMenu() {
+            const container = document.getElementById('contactHub');
+            const btn = container.querySelector('.main-action-btn');
+            container.classList.toggle('open');
+            btn.classList.toggle('active');
+            
+            const icon = btn.querySelector('i');
+            if (container.classList.contains('open')) {
+                icon.classList.remove('fa-headset');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-headset');
+            }
+        }
+    </script>
+</body>
+</html>
